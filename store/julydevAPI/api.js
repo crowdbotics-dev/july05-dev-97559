@@ -9,6 +9,24 @@ function api_docs_schema_retrieve(payload) {
 function api_v1_login_create(payload) {
   return julydevAPI.post(`/api/v1/login/`, payload.data)
 }
+function api_v1_mithilrs_list(payload) {
+  return julydevAPI.get(`/api/v1/mithilrs/`)
+}
+function api_v1_mithilrs_create(payload) {
+  return julydevAPI.post(`/api/v1/mithilrs/`, payload.data)
+}
+function api_v1_mithilrs_retrieve(payload) {
+  return julydevAPI.get(`/api/v1/mithilrs/${payload.id}/`)
+}
+function api_v1_mithilrs_update(payload) {
+  return julydevAPI.put(`/api/v1/mithilrs/${payload.id}/`, payload.data)
+}
+function api_v1_mithilrs_partial_update(payload) {
+  return julydevAPI.patch(`/api/v1/mithilrs/${payload.id}/`, payload.data)
+}
+function api_v1_mithilrs_destroy(payload) {
+  return julydevAPI.delete(`/api/v1/mithilrs/${payload.id}/`)
+}
 function api_v1_signup_create(payload) {
   return julydevAPI.post(`/api/v1/signup/`, payload.data)
 }
@@ -48,6 +66,12 @@ function rest_auth_user_partial_update(payload) {
 export const apiService = {
   api_docs_schema_retrieve,
   api_v1_login_create,
+  api_v1_mithilrs_list,
+  api_v1_mithilrs_create,
+  api_v1_mithilrs_retrieve,
+  api_v1_mithilrs_update,
+  api_v1_mithilrs_partial_update,
+  api_v1_mithilrs_destroy,
   api_v1_signup_create,
   rest_auth_login_create,
   rest_auth_logout_retrieve,
